@@ -56,14 +56,14 @@ app.post("/", (req, res) => {
         });
     });
     //send files to mailchimp
-    //request.write(jsonData);
+    request.write(jsonData);
     //signal that you ended sending
     request.end();
 });
 
 app.post("/failure", (req, res) => {
     res.redirect("/");
-})
+});
 
 app.listen(heorkuPort || localPort, () => {
     if (heorkuPort) {
